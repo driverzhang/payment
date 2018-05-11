@@ -153,6 +153,7 @@ func (this *Wechat) PayNotify(notify []byte) (*NofiyData, error) {
 	// 	paydata.ReturnData, _ = xml.Marshal(msg)
 	// 	return &paydata, fmt.Errorf("Sign Error")
 	// }
+	log.Printf("【支付后返回的订单数据】 %+v\n", notifyMap)
 
 	if notifyMap["total_fee"] != TotalPrice { // 检验 商品订单价格 是否一致
 		msg.ReturnCode = "FAIL"
